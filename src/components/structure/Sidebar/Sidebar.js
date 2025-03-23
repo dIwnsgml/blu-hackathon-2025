@@ -13,6 +13,7 @@ import {
   faShieldAlt,
   faReceipt,
 } from "@fortawesome/free-solid-svg-icons";
+import AccountBtn from "@/components/buttons/AccountBtn/AccountBtn";
 
 function SidebarEl({ pathname, href, children, onClick }) {
   return (
@@ -82,7 +83,9 @@ function Sidebar() {
         </i>
         <h3>Receipt Scanner</h3>
       </SidebarEl>
-      <div className={styles.buttons}></div>
+      <div className={styles.buttons}>
+        <AccountBtn />
+      </div>
     </aside>
   );
 }

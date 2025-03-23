@@ -4,6 +4,10 @@ import "./globals.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Suspense } from "react";
+import { AppContainer } from "@/components/structure/Providers";
+import AccountModal from "@/components/modals/AccountModal/AccountModal";
+import { Bounce, ToastContainer } from "react-toastify";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +29,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${roboto.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${roboto.variable}`}>
+        <Suspense>
+          <AppContainer>
+            <AccountModal />
+            {children}
+          </AppContainer>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+            style={{ zIndex: 10000000 }}
+          />
+        </Suspense>
+      </body>
     </html>
   );
 }

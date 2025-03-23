@@ -1,6 +1,7 @@
 "use client";
 
-import { QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ModalProviders from "./ModalProviders";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,5 +34,5 @@ export function AppContainer({ children }) {
 }
 
 function AppProvider({ children }) {
-  return { children };
+  return <ModalProviders>{children}</ModalProviders>;
 }
