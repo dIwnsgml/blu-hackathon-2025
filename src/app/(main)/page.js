@@ -70,7 +70,7 @@ export default function Home() {
             whileInView="visible"
           >
             <div className={styles.title}>
-              <h1 style={{ "font-size": "100px" }}>SafeCents.</h1>
+              <h1 style={{ "fontSize": "100px" }}>SafeCents.</h1>
             </div>
             <div className={styles.subTitle}>
               <p>
@@ -111,7 +111,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
           >
-            <div className={styles.title}>
+            <div className={styles.subTitle}>
               <h2>Set &amp; Track Your Financial Goals</h2>
             </div>
             <div className={styles.description}>
@@ -142,7 +142,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
           >
-            <div className={styles.title}>
+            <div className={styles.subTitle}>
               <h2>Practice Avoiding Scams with AI Chatbot</h2>
             </div>
             <div className={styles.description}>
@@ -175,7 +175,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
           >
-            <div className={styles.title}>
+            <div className={styles.subTitle}>
               <h2>Scan Receipts &amp; Learn to Manage Expenses</h2>
             </div>
             <div className={styles.description}>
@@ -205,14 +205,14 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
           >
-            <div className={styles.title}>
-              <h2>Financial Glossary &amp; Learning Hub</h2>
+            <div className={styles.subTitle}>
+              <h2>Financial Learning Hub</h2>
             </div>
             <div className={styles.description}>
               <p>
-                Learn essential financial terms and concepts with interactive
-                lessons, flashcards, and quizzes. Build a solid foundation in
-                financial literacy at your own pace.
+                Learn essential financial terms and concepts via interactive
+                conversational quizzes with an AI chatbot. Build a solid foundation in
+                financial literacy at your own personalized pace.
               </p>
               <p>
                 Financial literacy is key to making informed decisions about
@@ -269,8 +269,8 @@ export default function Home() {
                 <FontAwesomeIcon icon={faFileInvoice} />
               </Box>
               <Box
-                title="Financial Key Terms Glossary"
-                description={`Access a comprehensive glossary of essential financial terms to boost your understanding of key concepts.`}
+                title="Financial Key Terms Learning Hub"
+                description={`Access comprehensive and interactive quizzes on essential financial terms to boost your understanding of key concepts.`}
               >
                 <FontAwesomeIcon icon={faBookOpen} />
               </Box>

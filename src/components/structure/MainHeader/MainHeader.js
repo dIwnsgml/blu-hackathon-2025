@@ -20,9 +20,9 @@ export default function MainHeader() {
         <div className={styles.page}>
           <Link href={"/#about"}>About</Link>
         </div>
-        <div className={styles.page}>
+        {/* <div className={styles.page}>
           <Link href={"/#feature"}>Features</Link>
-        </div>
+        </div> */}
         {/* <div className={styles.page}>
           <Link href={"/#pricing"}>Pricing</Link>
         </div> */}
