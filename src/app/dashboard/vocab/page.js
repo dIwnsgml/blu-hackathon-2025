@@ -3,36 +3,40 @@
 import styles from "./page.module.css";
 import { useState, useRef, useCallback, useEffect } from "react";
 import terms from '../../../terms.js'
+import AxiosInstance from "@/utils/axiosInstance";
+import { requestHandler } from "@/utils/tools";
 
 export default function Vocab() {
 
   const inputRef = useRef(null);
   const [term, setTerm] = useState(null);
-  const [aiResponse, setAiResponse] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
 
   useEffect(() => {
     setTerm(terms[Math.floor(Math.random() * terms.length)])
   }, []);
 
-  const defineTerm = useCallback((term) => {
+  const defineTerm = useCallback(async (term) => {
     const attempt = inputRef.current.value;
     inputRef.current.value = "";
-    fetch('https://localhost:4006/ai', {
-      method: 'get',
 
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        return;
-        const res = data["choices"][0]["message"]['content'];
-        setAiResponse(res);
-        setChatHistory([...chatHistory, attempt, res]);
-      });
+    let newChat = [...chatHistory, {msg: attempt, ai: false}];
+
+    setChatHistory(newChat);
+
+    const res = await requestHandler(AxiosInstance.get(`/ai`, { params: { term: term, attempt } }));
+    const aiChat = res.data.response;
+
+    newChat = [...newChat, {msg: aiChat, ai: true}];
+    setChatHistory(newChat);
 
     setTerm(terms[Math.floor(Math.random() * terms.length)])
-  }, [inputRef]);
+  }, [inputRef, chatHistory]);
+
+  useEffect(() => {
+    if (!term) return;
+    setChatHistory([...chatHistory, {msg: "What is " + term + "?", ai: true}]);
+  }, [term])
 
   return (
     <div className={"page"}>
@@ -49,13 +53,10 @@ export default function Vocab() {
         {
           chatHistory.map((message, i) => (
             <p key={i} className>
-              {message}
+              {message.ai ? "AI" : "User"}: {message.msg}
             </p>
           ))
         }
-        <h2>
-          AI Response: {aiResponse}
-        </h2>
       </main>
     </div>
   );

@@ -70,11 +70,11 @@ export default function Home() {
             whileInView="visible"
           >
             <div className={styles.title}>
-              <h1 style={{ "font-size": "60px" }}>SafeCents</h1>
+              <h1 style={{ "font-size": "100px" }}>SafeCents.</h1>
             </div>
             <div className={styles.subTitle}>
               <p>
-                Your Shield Against Financial Fraud &amp; Smart Money Management
+                Your Shield Against Financial Fraud. Smart Money Management.
               </p>
             </div>
             <div className={styles.description}>
