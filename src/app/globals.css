@@ -82,3 +82,86 @@ a {
 input {
   outline: none;
 }
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  top: 31.25rem;
+  position: fixed;
+  left: calc(50vw - var(--modal-width) / 2);
+  /* transform: translateX(-50%); */
+  transition: 0.3s ease-in-out opacity, 0.3s ease-in-out visibility,
+    0.3s ease-in-out top;
+  background-color: #fff;
+  z-index: 7;
+  box-shadow: rgba(100, 100, 111, 0.2) 0em 0.4375rem 1.8125rem 0em;
+  border-radius: 1.25rem;
+}
+
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hoverText {
+  position: absolute;
+  background-color: #000000c3;
+  color: #fff;
+  transition: 0.3s ease-in-out opacity, 0.3s ease-in-out bottom;
+  opacity: 0;
+  pointer-events: none;
+  padding: 0.2rem;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  z-index: 2;
+  white-space: nowrap;
+  bottom: 0rem;
+}
+
+.overflowDot {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.page {
+  position: relative;
+  margin-top: calc(var(--header-height) + var(--header-offset) * 2);
+  margin-left: calc(var(--sidebar-width));
+  padding: 1rem 2rem;
+  width: calc(100vw - var(--sidebar-width));
+}
+
+.main {
+  background-color: var(--white-1);
+  padding: 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+}
+
+.box {
+  border-radius: 0.7rem;
+  /* border: 0.1rem solid var(--gray-1); */
+  padding: 2rem;
+  background-color: var(--box-background-color);
+  position: relative;
+}
+
+.box .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.box .header .button {
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.box .contents {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
