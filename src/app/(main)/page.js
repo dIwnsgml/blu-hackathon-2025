@@ -243,7 +243,7 @@ export default function Home() {
               </Box>
               <Box
                 title="Community Learning &amp; Discussions"
-                description={`Join a vibrant community of users, share experiences, and learn from others&apos; financial journeys.`}
+                description={`Join a vibrant community of users, share experiences, and learn from others' financial journeys.`}
               >
                 <FontAwesomeIcon icon={faUsers} />
               </Box>

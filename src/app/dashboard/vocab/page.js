@@ -1,15 +1,19 @@
 "use client"
 
 import styles from "./page.module.css";
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import terms from '../../../terms.js'
 
 export default function Vocab() {
 
   const inputRef = useRef(null);
-  const [term, setTerm] = useState(terms[Math.floor(Math.random() * terms.length)]);
+  const [term, setTerm] = useState(null);
   const [aiResponse, setAiResponse] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+
+  useEffect(() => {
+    setTerm(terms[Math.floor(Math.random() * terms.length)])
+  }, []);
 
   const defineTerm = useCallback((term) => {
     const attempt = inputRef.current.value;
@@ -52,7 +56,7 @@ export default function Vocab() {
     <div className={"page"}>
       <main className="main">
         <br />
-        <h1 style={{ 'color': 'black' }}>
+        <h1 className={styles.termQuestion}>
           What is &lsquo;{term}&rsquo;?
         </h1>
         <label>
