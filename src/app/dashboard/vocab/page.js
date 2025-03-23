@@ -18,37 +18,19 @@ export default function Vocab() {
   const defineTerm = useCallback((term) => {
     const attempt = inputRef.current.value;
     inputRef.current.value = "";
-    fetch('https://api.together.xyz/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ef3fc1c0236ec575c3c6757b2fa940e982439c52cfb0236c95a024c26f0557ab',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        'model': 'meta-llama/Llama-3.3-70B-Instruct-Turbo',
-        'messages': [
-          {
-            'role': 'system',
-            'content': "You are a supportive mentor for teaching the meaning of financial key terrms. Your job is only to tell the user if they are right and to define the term."
-          },
-          {
-            'role': 'assistant',
-            'content': "What is the term " + term + " ?"
-          },
-          {
-            'role': 'user',
-            'content': attempt
-          }
-        ],
-        "max_tokens": 1000,
-      })
+    fetch('https://localhost:4006/ai', {
+      method: 'get',
+
     })
       .then(response => response.json())
       .then(data => {
+        console.log(data);
+        return;
         const res = data["choices"][0]["message"]['content'];
         setAiResponse(res);
         setChatHistory([...chatHistory, attempt, res]);
       });
+
     setTerm(terms[Math.floor(Math.random() * terms.length)])
   }, [inputRef]);
 
