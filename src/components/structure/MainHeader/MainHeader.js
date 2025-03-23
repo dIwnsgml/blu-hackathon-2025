@@ -7,7 +7,7 @@ export default function MainHeader() {
   return (
     <header className={styles.MainHeader}>
       <div className={styles.left}>
-        <h1>TEST</h1>
+        <h1>SafeCents</h1>
       </div>
       <div className={styles.pages}>
         <div className={styles.page}>
@@ -26,8 +26,7 @@ export default function MainHeader() {
           <Link href={"/dashboard"}>Dashboard</Link>
         </div>
       </div>
-      <div className={styles.right}>
-      </div>
+      <div className={styles.right}></div>
     </header>
   );
 }

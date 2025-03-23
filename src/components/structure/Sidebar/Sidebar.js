@@ -6,8 +6,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useWindowSize } from "@/hooks/otherHooks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBook,
+  faBullseye,
+  faShieldAlt,
+  faReceipt,
+} from "@fortawesome/free-solid-svg-icons";
 
-function SidebarEl({ pathname, href, children, tutorial, onClick }) {
+function SidebarEl({ pathname, href, children, onClick }) {
   return (
     <Link
       href={href}
@@ -15,19 +22,16 @@ function SidebarEl({ pathname, href, children, tutorial, onClick }) {
         href === pathname ? styles.activeSidebar : ""
       }`}
       id={href === pathname ? "activeSidebar" : ""}
-      data-tutorial={tutorial}
-      onClick={onClick ?? onClick}
+      onClick={onClick}
     >
       {children}
     </Link>
   );
 }
 
-function Sidebar({}) {
+function Sidebar() {
   const focusBackgroundRef = useRef(null);
-
   const pathname = usePathname();
-
   const windowSize = useWindowSize();
 
   useEffect(() => {
@@ -45,46 +49,38 @@ function Sidebar({}) {
       <Link href={"/"} className={styles.logoContainer}>
         <Image
           src="/logo.png"
-          alt="FLOZABLE"
+          alt="SafeCents"
           width={0}
           height={0}
           sizes="100vw"
           className={styles.logo}
         />
-        <p className="jost">FLOZABLE</p>
+        <p className="jost">SafeCents</p>
       </Link>
       <div ref={focusBackgroundRef} id={styles.focusBackground}></div>
-      <SidebarEl pathname={pathname} href={"/dashboard"}>
-        <i></i>
-        <h3>Dashboard</h3>
+      <SidebarEl pathname={pathname} href={"/dashboard/education"}>
+        <i>
+          <FontAwesomeIcon icon={faBook} />
+        </i>
+        <h3>Financial Literacy</h3>
       </SidebarEl>
-      <SidebarEl pathname={pathname} href={"/dashboard/stats"}>
-        <i></i>
-        <h3>Statistics</h3>
+      <SidebarEl pathname={pathname} href={"/dashboard/goals"}>
+        <i>
+          <FontAwesomeIcon icon={faBullseye} />
+        </i>
+        <h3>Financial Goal Tracker</h3>
       </SidebarEl>
-      <SidebarEl pathname={pathname} href={"/dashboard/planner"}>
-        <i></i>
-        <h3>Planner</h3>
+      <SidebarEl pathname={pathname} href={"/dashboard/scam-simulator"}>
+        <i>
+          <FontAwesomeIcon icon={faShieldAlt} />
+        </i>
+        <h3>Scam Simulator</h3>
       </SidebarEl>
-      <SidebarEl pathname={pathname} href={"/dashboard/leaderboard"}>
-        <i></i>
-        <h3>Leaderboard</h3>
-      </SidebarEl>
-      <SidebarEl pathname={pathname} href={"/dashboard/groups"} tutorial={21}>
-        <i></i>
-        <h3>Groups</h3>
-      </SidebarEl>
-      <SidebarEl pathname={pathname} href={"/dashboard/friends"}>
-        <i></i>
-        <h3>Friends</h3>
-      </SidebarEl>
-      <SidebarEl pathname={pathname} href={"/dashboard/themes"}>
-        <i></i>
-        <h3>Themes</h3>
-      </SidebarEl>
-      <SidebarEl pathname={pathname} href={"/dashboard/account"}>
-        <i></i>
-        <h3>Settings</h3>
+      <SidebarEl pathname={pathname} href={"/dashboard/receipt-scanner"}>
+        <i>
+          <FontAwesomeIcon icon={faReceipt} />
+        </i>
+        <h3>Receipt Scanner</h3>
       </SidebarEl>
       <div className={styles.buttons}></div>
     </aside>

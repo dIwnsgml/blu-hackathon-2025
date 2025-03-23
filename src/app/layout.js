@@ -1,6 +1,10 @@
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",

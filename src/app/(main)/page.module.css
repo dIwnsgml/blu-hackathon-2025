@@ -1,0 +1,81 @@
+.page {
+  margin-top: 5rem;
+}
+.background {
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  z-index: -1;
+  width: 100vw;
+}
+
+.layer {
+  height: 100vh;
+  margin: 0rem var(--main-offset) 10rem var(--main-offset);
+  display: flex;
+  align-items: center;
+}
+
+.section .title {
+  font-size: 0.9rem;
+  color: var(--gray-3);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.section .title h2 {
+  font-weight: 600;
+}
+
+.section .subTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section .description {
+  color: var(--gray-2);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 1rem 0rem;
+}
+
+.boxes {
+  display: grid;
+  grid-template-rows: auto-fit;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.Box {
+  background-color: var(--blue-1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s ease-in-out box-shadow, transform 0.3s ease-in-out;
+  box-shadow: var(--shadow-7);
+}
+
+.Box:hover {
+  box-shadow: var(--shadow-2);
+  transform: translateY(-1rem);
+}
+
+.Box .icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 2rem;
+  background-color: var(--blue-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.Box .title {
+  color: #000;
+  font-weight: 600;
+  margin: 1rem 0rem;
+  font-size: 1.1rem;
+}
