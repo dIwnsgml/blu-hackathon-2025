@@ -1,0 +1,15 @@
+.Header {
+  height: var(--header-height);
+  width: calc(100vw - var(--sidebar-width) - var(--header-offset) * 2);
+  position: absolute;
+  top: 1rem;
+  left: calc(var(--sidebar-width) + var(--header-offset));
+  display: flex;
+  align-items: center;
+  z-index: 4;
+  background-color: #ffffff00;
+  position: fixed;
+  box-shadow: var(--shadow-7);
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
