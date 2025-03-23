@@ -70,7 +70,6 @@ export default function Home() {
           >
             <div className={styles.title}>
               <h1 style={{'font-size': '60px'}}>SafeCents</h1>
-              <h2>Empowering Communities with Financial Knowledge</h2>
             </div>
             <div className={styles.subTitle}>
               <p>

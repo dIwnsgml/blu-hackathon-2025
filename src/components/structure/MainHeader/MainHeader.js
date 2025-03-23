@@ -8,13 +8,14 @@ export default function MainHeader() {
     <header className={styles.MainHeader}>
       <div className={styles.left}>
         <h1>SafeCents</h1>
+        <h9 style={{'font-size': '10px'}}>Empowering Communities with Financial Knowledge</h9>
       </div>
       <div className={styles.pages}>
         <div className={styles.page}>
           <Link href={"/#about"}>About</Link>
         </div>
         <div className={styles.page}>
-          <Link href={"/#feature"}>Feature</Link>
+          <Link href={"/#feature"}>Features</Link>
         </div>
         {/* <div className={styles.page}>
           <Link href={"/#pricing"}>Pricing</Link>

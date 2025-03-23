@@ -8,6 +8,8 @@ export default function Vocab() {
 
   const inputRef = useRef(null);
   const [term, setTerm] = useState(terms[Math.floor(Math.random() * terms.length)]);
+  const [aiResponse, setAiResponse] = useState("");
+  const [chatHistory, setChatHistory] = useState("");
 
   const handleClick = () => {
     fetch('https://api.together.xyz/v1/chat/completions', {
@@ -62,7 +64,8 @@ export default function Vocab() {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data["choices"][0]["message"]['content'])
+        const res = data["choices"][0]["message"]['content'];
+        setAiResponse(res);
       });
 
     setTerm(terms[Math.floor(Math.random() * terms.length)])
@@ -71,15 +74,18 @@ export default function Vocab() {
   return (
     <div className={"page"}>
       <main className="main">
-        <button onClick={() => { handleClick() }}>Click me</button>
         <br />
         <h1 style={{ 'color': 'black' }}>
-          What is {term}?
+          What is &lsquo;{term}&rsquo;?
         </h1>
-        <button onClick={() => { defineTerm(term) }}>Submit</button>
         <label>
-          <input type="text" value="Define {term}" />
+          <input ref={inputRef} type="text" placeholder={"Define: " + term} />
         </label>
+        <button onClick={() => { defineTerm(term) }}>Submit</button>
+        <br /><br />
+        <h2>
+          AI Response: {aiResponse}
+        </h2>
       </main>
     </div>
   );
