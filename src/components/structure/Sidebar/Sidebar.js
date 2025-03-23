@@ -49,7 +49,7 @@ function Sidebar() {
     <aside className={styles.Sidebar}>
       <Link href={"/"} className={styles.logoContainer}>
         <Image
-          src="/logo.png"
+          src="/images/logo.png"
           alt="SafeCents"
           width={0}
           height={0}

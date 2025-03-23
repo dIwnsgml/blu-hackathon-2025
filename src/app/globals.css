@@ -19,7 +19,7 @@
   );
   --modal-width: 18rem;
   --sidebar-width: 18rem;
-  --header-height: 4rem;
+  --header-height: 0rem;
   --header-offset: 1rem;
   --subject-labels-color: var(--gray-3);
   --filtered-subject-labels-color: var(--gray-1);
@@ -164,4 +164,8 @@ input {
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
+}
+
+li {
+  list-style: none;
 }

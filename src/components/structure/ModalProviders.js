@@ -57,6 +57,13 @@ export function createModalProvider(
 export const { Context: AccountModalContext, Provider: AccountModalProvider } =
   createModalProvider(false, "isAccountModal");
 
+export const { Context: GoalModalContext, Provider: GoalModalProvider } =
+  createModalProvider(false, "isGoalModal");
+
 export default function ModalProviders({ children }) {
-  return <AccountModalProvider>{children}</AccountModalProvider>;
+  return (
+    <AccountModalProvider>
+      <GoalModalProvider>{children}</GoalModalProvider>
+    </AccountModalProvider>
+  );
 }

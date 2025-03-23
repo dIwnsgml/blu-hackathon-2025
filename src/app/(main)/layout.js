@@ -19,7 +19,7 @@ export default function MainLayout({ children }) {
     <div>
       <MainHeader />
       {children}
-      <MainFooter />
+      {/* <MainFooter /> */}
     </div>
   );
 }

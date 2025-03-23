@@ -17,6 +17,19 @@
   width: 20rem;
 }
 
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 5rem;
+}
+
+.left p {
+  font-size: 0.6rem;
+}
+
 .right {
   display: flex;
   flex-direction: row-reverse;
