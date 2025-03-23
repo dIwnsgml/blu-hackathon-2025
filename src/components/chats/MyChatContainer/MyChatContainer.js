@@ -1,6 +1,6 @@
 import styles from "./MyChatContainer.module.css";
 
-function MyChatContainer({ time, message }) {
+function MyChatContainer({ message }) {
   return (
     <li className={styles.MyChatContainer}>
       {/* <p className={styles.time}>{time}</p> */}
