@@ -14,8 +14,13 @@
   margin: 0rem var(--main-offset) 10rem var(--main-offset);
   display: flex;
   align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
+}
+
+.rightImg {
+  width: 40%;
+  flex-shrink: 0;
+  border-radius: 2rem;
+  overflow: hidden;
 }
 
 .section .title {

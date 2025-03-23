@@ -15,6 +15,7 @@ import {
   faShieldAlt,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
+import ResponsiveImg from "@/components/others/ResponsiveImg/ResponsiveImg";
 
 const variants = {
   hidden: { opacity: 0, x: -500 },
@@ -69,7 +70,7 @@ export default function Home() {
             whileInView="visible"
           >
             <div className={styles.title}>
-              <h1 style={{'font-size': '60px'}}>SafeCents</h1>
+              <h1 style={{ "font-size": "60px" }}>SafeCents</h1>
             </div>
             <div className={styles.subTitle}>
               <p>
@@ -78,10 +79,11 @@ export default function Home() {
             </div>
             <div className={styles.description}>
               <p>
-                SafeCents is your go-to platform for improving financial literacy
-                and protecting yourself from scams. Our AI-powered tools help
-                you set financial goals, understand key financial terms, and
-                even practice avoiding real-world scams in a safe environment.
+                SafeCents is your go-to platform for improving financial
+                literacy and protecting yourself from scams. Our AI-powered
+                tools help you set financial goals, understand key financial
+                terms, and even practice avoiding real-world scams in a safe
+                environment.
               </p>
               <p>
                 Whether you&apos;re learning to budget, investing wisely, or
@@ -120,13 +122,17 @@ export default function Home() {
               </p>
               <p>
                 Whether you&apos;re saving for an emergency fund, planning for
-                retirement, or budgeting for a major purchase, SafeCents provides
-                the necessary tools to help you stay financially disciplined.
-                Our goal-setting feature allows users to define their
-                objectives, track progress, and adjust strategies as needed.
+                retirement, or budgeting for a major purchase, SafeCents
+                provides the necessary tools to help you stay financially
+                disciplined. Our goal-setting feature allows users to define
+                their objectives, track progress, and adjust strategies as
+                needed.
               </p>
             </div>
           </motion.div>
+          <div className={styles.rightImg}>
+            <ResponsiveImg src={"/images/calculator.jpg"} />
+          </div>
         </div>
 
         <div className={styles.layer}>
@@ -157,6 +163,9 @@ export default function Home() {
               </p>
             </div>
           </motion.div>
+          <div className={styles.rightImg}>
+            <ResponsiveImg src={"/images/chatbot.jpg"} />
+          </div>
         </div>
 
         <div className={styles.layer}>
@@ -184,6 +193,9 @@ export default function Home() {
               </p>
             </div>
           </motion.div>
+          <div className={styles.rightImg}>
+            <ResponsiveImg src={"/images/receipt.jpg"} />
+          </div>
         </div>
 
         <div className={styles.layer}>
@@ -210,6 +222,9 @@ export default function Home() {
               </p>
             </div>
           </motion.div>
+          <div className={styles.rightImg}>
+            <ResponsiveImg src={"/images/learn.jpg"} />
+          </div>
         </div>
 
         <div className={styles.layer}>
