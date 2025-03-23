@@ -18,7 +18,7 @@
 
 .section .title {
   font-size: 0.9rem;
-  color: var(--gray-3);
+  color: var(--opacity-black);
   font-weight: 600;
   font-size: 1.2rem;
 }

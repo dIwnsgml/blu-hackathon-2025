@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <canvas ref={canvasRef} className={styles.background} />
-      <main className={"main"}>
+      <main>
         <div className={styles.layer}>
           <motion.div
             className={styles.section}
@@ -69,6 +69,7 @@ export default function Home() {
             whileInView="visible"
           >
             <div className={styles.title}>
+              <h1 style={{'font-size': '60px'}}>SafeCents</h1>
               <h2>Empowering Communities with Financial Knowledge</h2>
             </div>
             <div className={styles.subTitle}>
@@ -78,21 +79,21 @@ export default function Home() {
             </div>
             <div className={styles.description}>
               <p>
-                FinGuard is your go-to platform for improving financial literacy
+                SafeCents is your go-to platform for improving financial literacy
                 and protecting yourself from scams. Our AI-powered tools help
                 you set financial goals, understand key financial terms, and
                 even practice avoiding real-world scams in a safe environment.
               </p>
               <p>
                 Whether you&apos;re learning to budget, investing wisely, or
-                avoiding fraud, FinGuard gives you the knowledge and resources
+                avoiding fraud, SafeCents gives you the knowledge and resources
                 to make smarter financial decisions.
               </p>
               <p>
                 Financial fraud is an ever-growing concern in today&apos;s
                 digital world. From phishing scams to identity theft, many
                 individuals fall victim to sophisticated fraudulent schemes.
-                FinGuard helps users recognize the warning signs of financial
+                SafeCents helps users recognize the warning signs of financial
                 fraud and develop proactive strategies to safeguard their money.
               </p>
             </div>
@@ -120,7 +121,7 @@ export default function Home() {
               </p>
               <p>
                 Whether you&apos;re saving for an emergency fund, planning for
-                retirement, or budgeting for a major purchase, FinGuard provides
+                retirement, or budgeting for a major purchase, SafeCents provides
                 the necessary tools to help you stay financially disciplined.
                 Our goal-setting feature allows users to define their
                 objectives, track progress, and adjust strategies as needed.
