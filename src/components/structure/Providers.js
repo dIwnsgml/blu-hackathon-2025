@@ -43,7 +43,10 @@ function AppProvider({ children }) {
   const { setIsAccountModal } = useContext(AccountModalContext);
 
   useEffect(() => {
-    if (!accountData) return;
+    if (accountData) {
+      setIsAccountModal(false);
+      return;
+    }
 
     setIsAccountModal(true);
   }, [accountData]);
