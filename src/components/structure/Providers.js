@@ -1,7 +1,9 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import ModalProviders from "./ModalProviders";
+import ModalProviders, { AccountModalContext } from "./ModalProviders";
+import { useContext, useEffect } from "react";
+import { useAccount } from "@/hooks/accountHooks";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,11 +30,23 @@ const queryClient = new QueryClient({
 export function AppContainer({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <AppProvider>{children}</AppProvider>
+      <ModalProviders>
+        <AppProvider>{children}</AppProvider>
+      </ModalProviders>
     </QueryClientProvider>
   );
 }
 
 function AppProvider({ children }) {
-  return <ModalProviders>{children}</ModalProviders>;
+  const { accountData } = useAccount();
+
+  const { setIsAccountModal } = useContext(AccountModalContext);
+
+  useEffect(() => {
+    if (!accountData) return;
+
+    setIsAccountModal(true);
+  }, [accountData]);
+
+  return children;
 }
