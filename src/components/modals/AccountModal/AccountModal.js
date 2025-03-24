@@ -55,7 +55,7 @@ export default function AccountModal() {
 
     const newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.set("welcome", "true");
-    router.replace(`/dashboard?${newSearchParams.toString()}`, {
+    router.replace(`/dashboard/vocab}`, {
       scroll: false,
     });
   }, [signUp]);
