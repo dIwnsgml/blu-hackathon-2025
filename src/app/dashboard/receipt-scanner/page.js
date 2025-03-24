@@ -31,6 +31,7 @@ export default function ReceiptScanner() {
           }).then(response => response.json())
             .then(data => {
               console.log(data);
+              alert("Final Cost: " + data.value);
             })
         })
     }
