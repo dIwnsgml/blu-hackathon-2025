@@ -1,67 +1,84 @@
-"use client"
+"use client";
 
 import styles from "./page.module.css";
 import { useState, useRef, useCallback, useEffect } from "react";
 import AxiosInstance from "@/utils/axiosInstance";
 import { requestHandler } from "@/utils/tools";
+import BlobBtn from "@/components/buttons/BlobBtn/BlobBtn";
+import ChatContainer from "@/components/chats/ChatContainer/ChatContainer";
+import MyChatContainer from "@/components/chats/MyChatContainer/MyChatContainer";
+import SendBtn from "@/components/buttons/SendBtn/SendBtn";
 
 export default function ScamSimulator() {
-
   const inputRef = useRef(null);
   const [chatHistory, setChatHistory] = useState([]);
+  const [msgInput, setMsgInput] = useState("");
 
   const sendMsg = useCallback(async () => {
-    const userMsg = inputRef.current.value;
-    inputRef.current.value = "";
+    if (!msgInput.trim()) return;
 
-    let chatLogs = [];
-    for (let i = 0; i < chatHistory.length; i++) {
-      chatLogs.push({role: chatHistory[i].ai ? "assistant:" : "user:", content: chatHistory[i].msg});
-    }
-    chatLogs.push({
-      role: "user",
-      content: userMsg,
-    })
+    const userMsg = msgInput;
+    setMsgInput("");
 
     let newChat = [...chatHistory, { msg: userMsg, ai: false }];
-
     setChatHistory(newChat);
 
-    const res = await requestHandler(AxiosInstance.get(`/ai/chat`, {params: {chatHistory: chatLogs}}));
+    let chatLogs = newChat.map((entry) => ({
+      role: entry.ai ? "assistant" : "user",
+      content: entry.msg,
+    }));
+
+    const res = await requestHandler(
+      AxiosInstance.get(`/ai/chat`, { params: { chatHistory: chatLogs } })
+    );
     const aiChat = res.data.response;
 
     newChat = [...newChat, { msg: aiChat, ai: true }];
     setChatHistory(newChat);
-  }, [inputRef, chatHistory]);
+  }, [chatHistory, msgInput]);
 
   useEffect(() => {
     if (chatHistory.length < 1) {
       async function initialChat() {
         const res = await requestHandler(AxiosInstance.get(`/ai/chat`));
-        console.log(res);
         const aiChat = res.data.response;
-        setChatHistory([...chatHistory, { msg: aiChat, ai: true }]);
+        setChatHistory([{ msg: aiChat, ai: true }]);
       }
       initialChat();
     }
-  }, [chatHistory]);
+  }, []);
 
   return (
     <div className={"page"}>
       <main className="main">
-        <br />
-        <label>
-          <input ref={inputRef} type="text" placeholder="Send your message" />
-        </label>
-        <button onClick={() => { sendMsg() }}>Submit</button>
-        <br /><br />
-        {
-          chatHistory.map((message, i) => (
-            <p key={i}>
-              {message.ai ? "AI" : "User"}: {message.msg}
-            </p>
-          ))
-        }
+        <div className="box">
+          <div className="header">
+            <BlobBtn onClick={() => setChatHistory([])}>Reset Chat</BlobBtn>
+          </div>
+          <div className={styles.chatsContainer}>
+            <ul className={styles.chats}>
+              {chatHistory.map((message, i) =>
+                message.ai ? (
+                  <ChatContainer key={i} message={message.msg} />
+                ) : (
+                  <MyChatContainer key={i} message={message.msg} />
+                )
+              )}
+            </ul>
+            <div className={styles.inputWrapper}>
+              <input
+                type="text"
+                value={msgInput}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") sendMsg();
+                }}
+                onChange={(e) => setMsgInput(e.target.value)}
+                placeholder="Send your message"
+              />
+              <SendBtn onSubmit={sendMsg} />
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
