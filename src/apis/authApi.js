@@ -25,4 +25,4 @@ async function postAuthSignup({ name, email, password, timezone }) {
   );
 }
 
-export { getAuthLogout, postAuthVerify, postAuthSignin, postAuthSignup };
+export { getAuthLogout, postAuthSignin, postAuthSignup };
