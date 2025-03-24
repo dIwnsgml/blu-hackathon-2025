@@ -74,28 +74,24 @@ export default function Home() {
             </div>
             <div className={styles.subTitle}>
               <p>
-                Your Shield Against Financial Fraud. Smart Money Management.
+                Your Shield Against Financial Fraud. Smart Money Management. <br />
               </p>
             </div>
             <div className={styles.description}>
               <p>
-                SafeCents is your go-to platform for improving financial
+                Whether you&apos;re learning to budget, investing wisely, or
+                avoiding fraud, SafeCents is your go-to platform for improving financial
                 literacy and protecting yourself from scams. Our AI-powered
                 tools help you set financial goals, understand key financial
                 terms, and even practice avoiding real-world scams in a safe
-                environment.
-              </p>
-              <p>
-                Whether you&apos;re learning to budget, investing wisely, or
-                avoiding fraud, SafeCents gives you the knowledge and resources
-                to make smarter financial decisions.
+                environment. <br /> <br />
               </p>
               <p>
                 Financial fraud is an ever-growing concern in today&apos;s
                 digital world. From phishing scams to identity theft, many
                 individuals fall victim to sophisticated fraudulent schemes.
                 SafeCents helps users recognize the warning signs of financial
-                fraud and develop proactive strategies to safeguard their money.
+                fraud and develop proactive strategies to safeguard their money. <br /> <br />
               </p>
             </div>
             <BlobBtn onClick={() => router.push("/dashboard")}>
@@ -118,7 +114,7 @@ export default function Home() {
               <p>
                 Take control of your finances by setting clear, achievable
                 financial goals. Our smart tracking system provides insights and
-                personalized recommendations to keep you on the right path.
+                personalized recommendations to keep you on the right path. <br /> <br />
               </p>
               <p>
                 Whether you&apos;re saving for an emergency fund, planning for
@@ -149,12 +145,12 @@ export default function Home() {
               <p>
                 Train yourself to recognize scams with our AI-powered scam
                 simulation chatbot. Engage in realistic scammer conversations
-                and learn how to identify red flags.
+                and learn how to identify red flags. <br /> <br />
               </p>
               <p>
                 The chatbot will guide you through various scam scenarios,
                 helping you develop the skills to respond effectively and
-                protect yourself from falling victim to fraud.
+                protect yourself from falling victim to fraud. <br /> <br />
               </p>
               <p>
                 **Disclaimer:** Do not click any links in the chatbot, as they
@@ -180,16 +176,13 @@ export default function Home() {
             </div>
             <div className={styles.description}>
               <p>
-                Simply scan your receipts and let our AI analyze your spending
-                habits. Get insights on where your money goes and tips on how to
-                optimize your budget.
-              </p>
-              <p>
                 Keeping track of expenses can be challenging, but our receipt
                 scanning feature makes it easy to categorize spending, detect
                 patterns, and offer personalized financial advice. Understanding
                 your expenses is the first step toward achieving financial
-                stability.
+                stability. Simply scan your receipts and let our AI analyze your spending
+                habits. Get insights on where your money goes and tips on how to
+                optimize your budget.
               </p>
             </div>
           </motion.div>
@@ -212,7 +205,7 @@ export default function Home() {
               <p>
                 Learn essential financial terms and concepts via interactive
                 conversational quizzes with an AI chatbot. Build a solid foundation in
-                financial literacy at your own personalized pace.
+                financial literacy at your own personalized pace.  <br /> <br />
               </p>
               <p>
                 Financial literacy is key to making informed decisions about
