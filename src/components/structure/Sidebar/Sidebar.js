@@ -59,7 +59,7 @@ function Sidebar() {
         <p className="jost">SafeCents</p>
       </Link>
       <div ref={focusBackgroundRef} id={styles.focusBackground}></div>
-      <SidebarEl pathname={pathname} href={"/dashboard/education"}>
+      <SidebarEl pathname={pathname} href={"/dashboard/vocab"}>
         <i>
           <FontAwesomeIcon icon={faBook} />
         </i>

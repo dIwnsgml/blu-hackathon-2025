@@ -1,0 +1,39 @@
+.layer table {
+  width: 100%;
+}
+
+.layer table tr {
+  text-align: left;
+  margin-right: 0.1rem;
+}
+
+#categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 25rem);
+  justify-content: center;
+  gap: 2rem;
+}
+
+.category {
+  padding: 1rem 1rem;
+  box-shadow: var(--shadow-1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category .header {
+  display: flex;
+  justify-content: center;
+}
+
+.category .layer {
+  display: flex;
+  justify-content: center;
+}
+
+.layer#progressChart {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}

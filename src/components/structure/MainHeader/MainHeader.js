@@ -30,7 +30,7 @@ export default function MainHeader() {
           <Link href={"/#review"}>Review</Link>
         </div> */}
         <div className={styles.page}>
-          <Link href={"/dashboard"}>Dashboard</Link>
+          <Link href={"/dashboard/vocab"}>Dashboard</Link>
         </div>
       </div>
       <div className={styles.right}></div>
